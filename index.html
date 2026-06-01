@@ -76,7 +76,7 @@
 </head>
 <body class="bg-transparent pt-1 sm:pt-4 pb-12 px-4 md:px-0">
 
-    <div id="iframe-wrapper-part2" class="max-w-4xl mx-auto">
+    <div id="iframe-wrapper-part2" class="max-w-md lg:max-w-4xl mx-auto">
 
         <div class="w-full text-center max-w-2xl mx-auto px-4 mt-0 mb-4 sm:mb-10">
             <h4 class="text-xl sm:text-2xl font-black text-[#5b4a9a] tracking-wide leading-tight">
@@ -87,29 +87,29 @@
         <section class="max-w-5xl mx-auto relative px-1 sm:px-4">
 
             <div class="mega-course-card z-10">
-                <div class="p-3 sm:p-8 space-y-4">
+                <div class="pt-7 pb-3.5 px-4 sm:p-8 space-y-4">
                     
                     <div class="space-y-1 text-center mb-4 sm:mb-8">
                         <h3 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 tracking-wide leading-tight break-words">
-                            <span class="inline">注音趴＋拼音趴</span><span class="inline bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent ml-1 sm:ml-2">雙課大禮包</span>
+                            <span>注音趴＋拼音趴</span><span class="bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent ml-1 sm:ml-2">雙課大禮包</span>
                         </h3>
-                        <p class="text-slate-700 text-xs sm:text-sm font-normal max-w-2xl mx-auto">
-                            專為 3-8 歲孩子打造，輕鬆克服注音認讀、拼音、聲調難關！
-                        </p>
                     </div>
 
+                    <!-- 手機專屬頁籤：僅在手機版呈現 (lg:hidden)，電腦版自動隱藏 -->
                     <div class="flex bg-slate-100/80 p-1 rounded-xl lg:hidden mb-3 max-w-[260px] mx-auto border border-slate-200/40">
-                        <button onclick="switchTab('zhuyin')" id="tab-zhuyin" class="flex-1 py-2 text-xs font-black rounded-lg transition-all bg-white text-violet-700 shadow-sm">
+                        <button onclick="switchTab('zhuyin')" id="tab-tab-zhuyin" class="flex-1 py-2 text-xs font-black rounded-lg transition-all bg-white text-violet-700 shadow-sm">
                             注音趴介紹
                         </button>
-                        <button onclick="switchTab('pinyin')" id="tab-pinyin" class="flex-1 py-2 text-xs font-bold rounded-lg transition-all text-slate-500 hover:text-slate-800">
+                        <button onclick="switchTab('pinyin')" id="tab-tab-pinyin" class="flex-1 py-2 text-xs font-bold rounded-lg transition-all text-slate-500 hover:text-slate-800">
                             拼音趴介紹
                         </button>
                     </div>
 
-                    <div class="pb-1 mb-6 sm:mb-8">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6">
+                    <div class="pb-1 mb-6">
+                        <!-- 電腦版自動並排 (lg:grid-cols-2)，手機版維持單欄 (grid-cols-1) -->
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6">
                             
+                            <!-- 課程 1：兒童注音趴 -->
                             <div id="course-zhuyin" class="bg-amber-50/20 rounded-2xl p-4 sm:p-5 border border-amber-100 flex flex-col justify-between h-full space-y-4 transition-all duration-300">
                                 <div class="w-full">
                                     <div class="relative rounded-xl overflow-hidden aspect-[16/9] bg-slate-100 border border-slate-100 shadow-sm">
@@ -137,7 +137,8 @@
                                 </div>
                             </div>
 
-                            <div id="course-pinyin" class="bg-violet-50/20 rounded-2xl p-4 sm:p-5 border border-rose-100 flex flex-col justify-between h-full space-y-4 transition-all duration-300 hidden lg:flex">
+                            <!-- 課程 2：兒童拼音趴 (手機預設隱藏 hidden，電腦版強制顯示 lg:flex 保持並排) -->
+                            <div id="course-pinyin" class="bg-violet-50/20 rounded-2xl p-4 sm:p-5 border border-rose-100 flex-col lg:flex justify-between h-full space-y-4 transition-all duration-300 hidden">
                                 <div class="w-full">
                                     <div class="relative rounded-xl overflow-hidden aspect-[16/9] bg-slate-100 border border-slate-100 shadow-sm">
                                         <img src="https://image.fevercdn.com?bucket=picture-original.fevercdn.com&filepath=parenting%2F5%2F2103%2F8a83beff83b6bf77df8bbe1f.png" alt="拼音趴課程" class="w-full h-full object-cover">
@@ -167,38 +168,41 @@
                         </div>
                     </div>
 
-                    <div class="bg-slate-50/80 rounded-2xl p-3.5 sm:p-5 border border-slate-100 shadow-sm">
+                    <!-- 結帳促銷區 (全新重構版：手機版版面更舒適且高質感) -->
+                    <div class="bg-slate-50/80 rounded-2xl p-4 sm:p-5 border border-slate-100 shadow-sm">
                         <div class="space-y-4">
                             
-                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-slate-200/60 pb-3">
-                                <div class="text-center sm:text-left">
+                            <!-- 價格與折價券 (在手機版流暢垂直堆疊，電腦版水平橫排) -->
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-200/60 pb-4">
+                                <!-- 左側：大字特惠價 -->
+                                <div class="text-center sm:text-left flex flex-col justify-center">
                                     <span class="text-slate-400 line-through text-xs block">原價 $7,600</span>
                                     <div class="text-orange-600 font-black text-2xl sm:text-3xl tracking-tight mt-0.5 whitespace-nowrap">
                                         NT$ <span class="text-3xl sm:text-4xl">5,490</span>
                                     </div>
                                 </div>
                                 
-                                <div id="coupon-btn" onclick="copyCouponCode('GPM300')" class="cursor-pointer group flex items-center justify-center gap-2 bg-rose-50 border border-rose-200 hover:bg-rose-100/60 px-4 py-2 rounded-full text-sm sm:text-base text-rose-600 font-bold active:scale-95 transition-all w-fit mx-auto sm:mx-0 shrink-0" title="點擊一鍵複製代碼">
-                                    <i class="fa-solid fa-ticket text-rose-500 mr-1 animate-pulse"></i> 
-                                    <span>輸入代碼 <span class="bg-rose-600 text-white px-2.5 py-0.5 rounded mx-1 font-mono text-xs sm:text-sm font-black">GPM300</span> 再折 <strong class="text-rose-700 text-base sm:text-lg">300</strong> 元</span>
-                                    <span class="text-rose-300">|</span>
-                                    <span class="text-rose-600 flex items-center gap-1 shrink-0 font-black">
-                                        <i class="fa-regular fa-copy"></i>複製
-                                    </span>
+                                <!-- 右側：高質感虛線折扣票卡區，保證小螢幕絕對不爆字跑版 -->
+                                <div class="flex-1 w-full max-w-md mx-auto sm:mx-0">
+                                    <div class="flex items-center justify-between bg-rose-50/70 border border-dashed border-rose-300 rounded-xl p-3">
+                                        <div class="flex items-center gap-2 pr-2">
+                                            <span class="bg-rose-600 text-white text-[11px] sm:text-xs font-mono font-black px-2 py-0.5 rounded shadow-sm shrink-0">GPM300</span>
+                                            <span class="text-xs sm:text-sm text-rose-700 font-bold leading-tight">輸入代碼再折 300 元</span>
+                                        </div>
+                                        <button id="coupon-btn" onclick="copyCouponCode('GPM300')" class="bg-white hover:bg-rose-100/50 border border-rose-200 text-rose-600 text-xs sm:text-sm font-black px-3 py-1.5 rounded-lg flex items-center gap-1 active:scale-95 transition-all shrink-0">
+                                            <i class="fa-regular fa-copy"></i>
+                                            <span>複製</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             
-                            <a href="https://learning.parenting.com.tw/plans/467de1dc-cefd-4a7c-a852-ee32c81e91a2?utm_source=SiteTopic.website&utm_medium=referral&utm_campaign=cp_r_2606bopomofo_course_bundle_lp_20260528" target="_blank" rel="noopener noreferrer" class="btn-action w-full py-3.5 px-5 rounded-xl font-black text-base sm:text-lg transition-all duration-300 text-center block">
+                            <!-- 搶先優惠按鈕 -->
+                            <a href="https://learning.parenting.com.tw/plans/467de1dc-cefd-4a7c-a852-ee32c81e91a2?utm_source=SiteTopic.website&utm_medium=referral&utm_campaign=cp_r_2606bopomofo_course_bundle_lp_20260528" target="_blank" rel="noopener noreferrer" class="btn-action w-full py-3.5 px-5 rounded-2xl font-black text-base sm:text-lg transition-all duration-300 text-center block">
                                 <span class="whitespace-nowrap">搶先領取限時優惠 ➔</span>
                             </a>
 
                         </div>
-                    </div>
-
-                    <div class="pt-4 text-center">
-                        <p class="text-[11px] sm:text-xs text-slate-500 font-medium inline-flex items-center justify-center gap-1 leading-relaxed w-full bg-slate-50 rounded-lg py-1.5 px-3 border border-slate-100/60 shadow-inner">
-                            <span>消費滿 <span class="text-orange-600 font-extrabold">NT$ 5,000</span> 即自動升等「親子天下 Premium 會員」，享全年免運、免費景點票券等專屬權益。</span>
-                        </p>
                     </div>
 
                 </div>
@@ -208,27 +212,44 @@
 
     </div>
 
+    <!-- 腳本邏輯 -->
     <script>
         function switchTab(tab) {
             const zhuyinCard = document.getElementById('course-zhuyin');
             const pinyinCard = document.getElementById('course-pinyin');
-            const tabZhuyin = document.getElementById('tab-zhuyin');
-            const tabPinyin = document.getElementById('tab-pinyin');
+            const tabZhuyin = document.getElementById('tab-tab-zhuyin');
+            const tabPinyin = document.getElementById('tab-tab-pinyin');
 
-            if (tab === 'zhuyin') {
-                zhuyinCard.classList.remove('hidden');
-                pinyinCard.classList.add('hidden');
-                tabZhuyin.className = "flex-1 py-2 text-xs font-black rounded-lg transition-all bg-white text-violet-700 shadow-sm";
-                tabPinyin.className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all text-slate-500 hover:text-slate-800";
-            } else {
-                zhuyinCard.classList.add('hidden');
-                pinyinCard.classList.remove('hidden');
-                pinyinCard.classList.add('flex');
-                tabZhuyin.className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all text-slate-500 hover:text-slate-800";
-                tabPinyin.className = "flex-1 py-2 text-xs font-black rounded-lg transition-all bg-white text-violet-700 shadow-sm";
+            if (window.innerWidth < 1024) {
+                if (tab === 'zhuyin') {
+                    zhuyinCard.classList.remove('hidden');
+                    pinyinCard.classList.add('hidden');
+                    pinyinCard.classList.remove('flex');
+                    tabZhuyin.className = "flex-1 py-2 text-xs font-black rounded-lg transition-all bg-white text-violet-700 shadow-sm";
+                    tabPinyin.className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all text-slate-500 hover:text-slate-800";
+                } else {
+                    zhuyinCard.classList.add('hidden');
+                    pinyinCard.classList.remove('hidden');
+                    pinyinCard.classList.add('flex');
+                    tabZhuyin.className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all text-slate-500 hover:text-slate-800";
+                    tabPinyin.className = "flex-1 py-2 text-xs font-black rounded-lg transition-all bg-white text-violet-700 shadow-sm";
+                }
             }
             sendHeightToParent();
         }
+
+        window.addEventListener('resize', () => {
+            const zhuyinCard = document.getElementById('course-zhuyin');
+            const pinyinCard = document.getElementById('course-pinyin');
+            if (window.innerWidth >= 1024) {
+                zhuyinCard.classList.remove('hidden');
+                pinyinCard.classList.remove('hidden');
+                pinyinCard.classList.add('flex');
+            } else {
+                switchTab('zhuyin');
+            }
+            sendHeightToParent();
+        });
 
         function sendHeightToParent() {
             setTimeout(() => {
@@ -243,9 +264,14 @@
             }, 50);
         }
 
-        window.addEventListener('load', sendHeightToParent);
-        window.addEventListener('resize', sendHeightToParent);
+        window.addEventListener('load', () => {
+            if (window.innerWidth < 1024) {
+                switchTab('zhuyin');
+            }
+            sendHeightToParent();
+        });
 
+        // 複製邏輯：適配新的按鈕與樣式
         function copyCouponCode(code) {
             const tempTextArea = document.createElement('textarea');
             tempTextArea.value = code;
@@ -260,12 +286,12 @@
                     const couponBtn = document.getElementById('coupon-btn');
                     const originalHTML = couponBtn.innerHTML;
                     
-                    couponBtn.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-500 mr-1"></i> 已複製代碼！`;
-                    couponBtn.className = "inline-flex items-center justify-center text-sm sm:text-base text-emerald-600 bg-emerald-50 border border-emerald-200 font-bold tracking-wide px-4 py-2 rounded-full shadow-sm transition-all w-fit mx-auto sm:mx-0";
+                    couponBtn.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-500"></i><span>已複製</span>`;
+                    couponBtn.className = "bg-emerald-50 border border-emerald-200 text-emerald-600 text-xs sm:text-sm font-black px-3 py-1.5 rounded-lg flex items-center gap-1 transition-all shrink-0";
                     
                     setTimeout(() => {
                         couponBtn.innerHTML = originalHTML;
-                        couponBtn.className = "cursor-pointer group flex items-center justify-center gap-2 bg-rose-50 border border-rose-200 hover:bg-rose-100/60 px-4 py-2 rounded-full text-sm sm:text-base text-rose-600 font-bold active:scale-95 transition-all w-fit mx-auto sm:mx-0 shrink-0";
+                        couponBtn.className = "bg-white hover:bg-rose-100/50 border border-rose-200 text-rose-600 text-xs sm:text-sm font-black px-3 py-1.5 rounded-lg flex items-center gap-1 active:scale-95 transition-all shrink-0";
                     }, 2000);
                 }
             } catch (err) {
